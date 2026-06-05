@@ -1,0 +1,607 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,Tahoma,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+color:#222;
+min-height:100vh;
+}
+
+/* ========================= */
+/* GLOBAL */
+/* ========================= */
+
+.hidden{
+display:none !important;
+}
+
+.screen{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+padding:20px;
+}
+
+h1{
+font-size:2rem;
+color:#b71c1c;
+margin-bottom:10px;
+text-align:center;
+}
+
+h2{
+text-align:center;
+}
+
+button{
+cursor:pointer;
+border:none;
+transition:0.25s;
+}
+
+button:hover{
+transform:translateY(-2px);
+}
+
+button:active{
+transform:scale(.96);
+}
+
+/* ========================= */
+/* START SCREEN */
+/* ========================= */
+
+.profile-box{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.1);
+display:flex;
+flex-direction:column;
+gap:12px;
+width:300px;
+}
+
+.profile-box input{
+padding:12px;
+border:2px solid #ddd;
+border-radius:10px;
+font-size:1rem;
+}
+
+.profile-box button{
+background:#d32f2f;
+color:white;
+padding:12px;
+border-radius:10px;
+font-weight:bold;
+}
+
+/* ========================= */
+/* GAME SCREEN */
+/* ========================= */
+
+#gameScreen{
+padding:15px;
+max-width:1200px;
+margin:auto;
+}
+
+/* ========================= */
+/* TOP BAR */
+/* ========================= */
+
+.topbar{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+margin-bottom:15px;
+}
+
+.topbar div{
+background:white;
+padding:12px;
+border-radius:12px;
+font-weight:bold;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+/* ========================= */
+/* TIMER */
+/* ========================= */
+
+#timerBox{
+background:linear-gradient(
+135deg,
+#ffebee,
+#ffcdd2
+);
+padding:15px;
+border-radius:15px;
+margin-bottom:15px;
+text-align:center;
+border:3px solid #e53935;
+}
+
+#timer{
+font-size:2rem;
+font-weight:bold;
+color:#d50000;
+}
+
+#patienceLabel{
+margin-top:8px;
+font-weight:bold;
+}
+
+/* timer warning */
+
+.timer-warning{
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+0%{
+opacity:1;
+}
+
+50%{
+opacity:.4;
+}
+
+100%{
+opacity:1;
+}
+
+}
+
+/* ========================= */
+/* CUSTOMER */
+/* ========================= */
+
+.customer-section{
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+#customerName{
+color:#b71c1c;
+margin-bottom:10px;
+}
+
+#customerDialog{
+font-size:1rem;
+line-height:1.5;
+}
+
+/* ========================= */
+/* SHOPPING LIST */
+/* ========================= */
+
+.shopping-section{
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+#shoppingList{
+display:flex;
+flex-direction:column;
+gap:8px;
+margin-top:10px;
+margin-bottom:10px;
+}
+
+.shopping-item{
+display:flex;
+justify-content:space-between;
+background:#fafafa;
+padding:10px;
+border-radius:8px;
+}
+
+/* ========================= */
+/* TOTAL */
+/* ========================= */
+
+#totalPrice{
+color:#d32f2f;
+font-size:1.3rem;
+font-weight:bold;
+}
+
+/* ========================= */
+/* MONEY AREA */
+/* ========================= */
+
+.payment-section{
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+#moneyContainer{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:15px;
+}
+
+/* ========================= */
+/* MONEY CARD */
+/* ========================= */
+
+.money-card{
+width:160px;
+height:90px;
+border-radius:12px;
+padding:10px;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+cursor:pointer;
+transition:.2s;
+position:relative;
+overflow:hidden;
+}
+
+.money-card:hover{
+transform:translateY(-4px);
+}
+
+.money-card::after{
+content:"";
+position:absolute;
+top:0;
+left:-60%;
+width:40%;
+height:100%;
+background:rgba(255,255,255,.25);
+transform:skewX(-20deg);
+}
+
+.money-card:hover::after{
+left:130%;
+transition:.7s;
+}
+
+.money-1000{
+background:#616161;
+}
+
+.money-2000{
+background:#8e24aa;
+}
+
+.money-5000{
+background:#8d6e63;
+}
+
+.money-10000{
+background:#7cb342;
+}
+
+.money-20000{
+background:#2e7d32;
+}
+
+.money-50000{
+background:#1565c0;
+}
+
+.money-100000{
+background:#d32f2f;
+}
+
+.money-value{
+font-size:1.2rem;
+font-weight:bold;
+}
+
+.money-label{
+font-size:.8rem;
+opacity:.9;
+}
+
+/* ========================= */
+/* INSPECTION */
+/* ========================= */
+
+.inspection-panel{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:15px;
+}
+
+.inspection-panel button{
+flex:1;
+min-width:120px;
+padding:14px;
+font-size:1rem;
+font-weight:bold;
+border-radius:12px;
+color:white;
+}
+
+#lookBtn{
+background:#1565c0;
+}
+
+#touchBtn{
+background:#ef6c00;
+}
+
+#lightBtn{
+background:#8e24aa;
+}
+
+/* ========================= */
+/* CLUE BOX */
+/* ========================= */
+
+#clueBox{
+background:#fff8e1;
+border-left:6px solid #ffb300;
+padding:15px;
+border-radius:12px;
+margin-bottom:15px;
+min-height:90px;
+line-height:1.5;
+}
+
+/* ========================= */
+/* ACCEPT / REJECT */
+/* ========================= */
+
+.action-panel{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.action-panel button{
+flex:1;
+padding:16px;
+font-size:1rem;
+font-weight:bold;
+border-radius:12px;
+color:white;
+}
+
+#acceptBtn{
+background:#2e7d32;
+}
+
+#rejectBtn{
+background:#c62828;
+}
+
+/* ========================= */
+/* POPUPS */
+/* ========================= */
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+display:flex;
+justify-content:center;
+align-items:center;
+padding:15px;
+z-index:999;
+}
+
+.popup-content{
+background:white;
+width:100%;
+max-width:500px;
+border-radius:15px;
+padding:25px;
+text-align:center;
+animation:popupShow .25s ease;
+}
+
+@keyframes popupShow{
+
+from{
+transform:scale(.85);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+.popup-content button{
+margin-top:10px;
+width:100%;
+padding:12px;
+border-radius:10px;
+background:#d32f2f;
+color:white;
+font-weight:bold;
+}
+
+/* ========================= */
+/* LEADERBOARD */
+/* ========================= */
+
+#leaderboardList{
+max-height:300px;
+overflow:auto;
+margin-top:15px;
+}
+
+.leaderboard-item{
+display:flex;
+justify-content:space-between;
+padding:10px;
+margin-bottom:8px;
+background:#f5f5f5;
+border-radius:8px;
+}
+
+/* ========================= */
+/* MONEY MODAL */
+/* ========================= */
+
+#moneyInfo{
+margin-top:15px;
+line-height:1.7;
+text-align:left;
+}
+
+/* ========================= */
+/* SHOP */
+/* ========================= */
+
+#shopPopup button{
+margin-top:10px;
+}
+
+#shopCoins{
+font-weight:bold;
+color:#d32f2f;
+font-size:1.2rem;
+}
+
+/* ========================= */
+/* DAY COMPLETE */
+/* ========================= */
+
+#dayPopup p{
+margin-top:10px;
+}
+
+/* ========================= */
+/* CUSTOMER MOOD */
+/* ========================= */
+
+.customer-calm{
+border-left:6px solid #43a047;
+}
+
+.customer-normal{
+border-left:6px solid #fbc02d;
+}
+
+.customer-angry{
+border-left:6px solid #e53935;
+}
+
+/* ========================= */
+/* STREAK EFFECT */
+/* ========================= */
+
+.streak-glow{
+animation:glow 1.2s infinite;
+}
+
+@keyframes glow{
+
+0%{
+box-shadow:0 0 5px gold;
+}
+
+50%{
+box-shadow:0 0 25px gold;
+}
+
+100%{
+box-shadow:0 0 5px gold;
+}
+
+}
+
+/* ========================= */
+/* RESPONSIVE TABLET */
+/* ========================= */
+
+@media(max-width:900px){
+
+.topbar{
+grid-template-columns:repeat(2,1fr);
+}
+
+.money-card{
+width:140px;
+}
+
+}
+
+/* ========================= */
+/* RESPONSIVE HP */
+/* ========================= */
+
+@media(max-width:600px){
+
+.topbar{
+grid-template-columns:1fr;
+}
+
+.money-card{
+width:100%;
+height:80px;
+}
+
+.inspection-panel{
+flex-direction:column;
+}
+
+.action-panel{
+flex-direction:column;
+}
+
+#timer{
+font-size:1.7rem;
+}
+
+.popup-content{
+padding:20px;
+}
+
+}
+
+/* ========================= */
+/* SCROLLBAR */
+/* ========================= */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#c62828;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+background:#f0f0f0;
+}
